@@ -1,0 +1,50 @@
+html, 
+body{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+    text-align:center;
+    margin: auto;
+}
+
+.main-container{
+    max-width: 700px;
+    margin:auto;
+}
+
+.instructions-container,
+.timer-container,
+.submit-container{
+    text-align:center;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.questions-container{
+    display:flex;
+    visibility: hidden;
+    text-align: left;
+    margin: 20px;
+    padding: 10px;
+}
+
+.cheat-mode-container{
+    display: block;
+    visibility: hidden;
+    text-align:center;
+    justify-content: center;
+    margin: auto;
+}
+
+.btn{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#collaspeCheatMode{
+    display: none;
+    text-align: center;
+    margin: auto;
+}
