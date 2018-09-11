@@ -1,24 +1,71 @@
-html,
-body{
-    margin-left: auto;
-    margin-right: auto;
-    height:100vh;}
+/* MediaPort */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .header{
+        text-align:center;
+        margin: auto;
+        max-width: 100%;
+    }
+    
+    .main-container{
+        max-width: 100%;
+        margin:auto;
+        min-height: 100vh;
+        background-color: white;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .header{
+        text-align:center;
+        margin: auto;
+        max-width: 500px;
+    }
+    
+    .main-container{
+        max-width: 500px;
+        margin:auto;
+        min-height: 100vh;
+        background-color: white;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .header{
+        text-align:center;
+        margin: auto;
+        max-width: 800px;
+    }
+    
+    .main-container{
+        max-width: 800px;
+        margin:auto;
+        min-height: 100vh;
+        background-color: white;
+    }
+}
 
 body{
-    background-color: white;
+    background-image: url("../images/dulles_international_airport_washington.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
 }
 
 .header{
     text-align:center;
     margin: auto;
-    background-color: white;
-    max-width: 750px;
+    max-width: 800px;
 }
 
 .main-container{
-    max-width: 750px;
+    max-width: 800px;
     margin:auto;
-    height: 100%;
+    min-height: 100vh;
     background-color: white;
 }
 
@@ -27,21 +74,23 @@ body{
 .submit-container{
     text-align:center;
     margin: auto;
-    /* padding: 10px; */
+}
+
+.timer-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .questions-container{
     display:none;
-    /* visibility: hidden; */
     text-align: left;
     margin: 20px;
-    /* padding: 10px; */
 }
 
 .submit-container{
     display:none;
-    margin:10px;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-bottom: 30px;
 }
 
 .cheat-mode-container{
@@ -56,19 +105,28 @@ body{
     border: lightgray .5px solid;
 }
 
+.card-source{
+    display:none;
+}
+
+.radio-button{
+    margin-left:10px;
+}
+
 .btn{
     margin-left: 2px;
     margin-right: 2px;
 }
 
-
-.fa-check{
-    display: none;
+.fa-grin-wink{
     color: green;
 }
 
-.fa-times{
-    display: none;
+.fa-question-circle{
+    color: lightskyblue;
+}
+
+.fa-frown-open{
     color: red;
 }
 
@@ -89,5 +147,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 #start{
-    margin:10px;
+    margin: 10px;
 }
+

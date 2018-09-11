@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!-- Javascript link -->
     <script src="assets/javascript/app.js"></script>
@@ -28,11 +28,11 @@
 
 <body>
 
-    <div class = "header">
-    <h1>Trivia Game</h1>
-    </div>
+<div class = "main-container">
 
-    <div class = "main-container">
+    <div class = "header">
+        <h1>Trivia Game</h1>
+    </div>
 
     <div class = "instructions-container">
     <p>
@@ -43,8 +43,9 @@
     
         <div class="collapse" id="collapseInstructions">
             <div class="card card-body">
-                You will have 30 seconds to answer the 5 presented questions. The moment you click on the "Start" button, the countdown will begin and all questions will be presented. <br>
-                At the end of 30 seconds, the correct answers and your score will be presented to you.<br>
+                You will have 60 seconds to answer the 10 presented questions. The moment you click on the "Start" button, the countdown will begin and all questions will be presented. <br>
+                At the end of 60 seconds, the correct answers and your score will be presented to you.<br>
+                If you finish answering all questions before 60 seconds has elapsed, you may also click the "Submit" button at the bottom.<br>
                 Good Luck.
             </div>
         </div>
@@ -59,7 +60,7 @@
     </div>
 
     <div class = "timer-container">
-        <div id = "timer"><h2>30 seconds left</h2></div>
+        <div id = "timer"><h2></h2></div>
         <button class="btn btn-primary btn-lg" id="start" type ="button">Start</button>
     </div>
 
@@ -76,16 +77,16 @@
                         <input class = "radio-button" name="q1" type="radio" value="Hartsfield-Jackson Atlanta International Airport"> Hartsfield-Jackson Atlanta International Airport <br>
                         <input class = "radio-button" name="q1" type="radio" value="Los Angeles International Airport"> Los Angeles International Airport<br>
                         <input class = "radio-button" name="q1" type="radio" value="Tokyo Haneda International Airport"> Tokyo Haneda International Airport<br>
-
                     </form>
                     <br>
                     <h6 id = "card-selected-q1"></h6>
                     <h6 id = "card-answer-q1"></h6>
+                    <h6 class = "card-source" id = "card-source-q1"><a href ="https://www.cnn.com/travel/article/worlds-busiest-airports-preliminary-2017/index.html" target="_blank">Source</a></h6>
                 </div>
             </div>
 
             <div class="card">
-                <h5 class="card-header" id= "card-header2" data-value = "Question 1">Question 2</h5>
+                <h5 class="card-header" id= "card-header2" data-value = "Question 2">Question 2</h5>
                 <div class="card-body">
                     <h5 class="card-title">What is the largest passenger aircraft currently in operation as of 2018?</h5>
                     <form action="">
@@ -98,81 +99,174 @@
                     <br>
                     <h6 id = "card-selected-q2"></h6>
                     <h6 id = "card-answer-q2"></h6>
+                    <h6 class = "card-source" id = "card-source-q2"><a href ="https://www.aviationcv.com/aviation-blog/2015/top-largest-passenger-aircraft" target="_blank">Source</a></h6>
                 </div>
             </div>
 
             <div class="card">
-                <h5 class="card-header" id= "card-header3" data-value = "Question 1">Question 3</h5>
+                <h5 class="card-header" id= "card-header3" data-value = "Question 3">Question 3</h5>
                 <div class="card-body">
                     <h5 class="card-title">Which airport operates at the highest altitude as of 2018?</h5>
                     <form action="">
-                        <input class = "radio-button" name="q3" type="radio" value="Daocheng Yading Airport"> Daocheng Yading Airport<br>
-                        <input class = "radio-button" name="q3" type="radio" value="El Alto International Airport"> El Alto International Airport<br>
-                        <input class = "radio-button" name="q3" type="radio" value="Kangding Airport"> Kangding Airport<br>
-                        <input class = "radio-button" name="q3" type="radio" value="Ngari Gunsa Airport"> Ngari Gunsa Airport<br>
-                        <input class = "radio-button" name="q3" type="radio" value="Qamdo Bamda Airport"> Qamdo Bamda Airport<br>
+                        <input class = "radio-button" name="q3" type="radio" value="Daocheng Yading Airport, China"> Daocheng Yading Airport, China<br>
+                        <input class = "radio-button" name="q3" type="radio" value="El Alto International Airport, Peru"> El Alto International Airport, Peru<br>
+                        <input class = "radio-button" name="q3" type="radio" value="Kangding Airport, China"> Kangding Airport, China<br>
+                        <input class = "radio-button" name="q3" type="radio" value="Ngari Gunsa Airport, China"> Ngari Gunsa Airport, China<br>
+                        <input class = "radio-button" name="q3" type="radio" value="Qamdo Bamda Airport, China"> Qamdo Bamda Airport, China<br>
                     </form>
                     <br>
                     <h6 id = "card-selected-q3"></h6>
                     <h6 id = "card-answer-q3"></h6>
+                    <h6 class = "card-source" id = "card-source-q3"><a href ="https://www.airport-technology.com/features/feature-the-top-10-highest-altitude-airports-in-the-world" target="_blank">Source</a></h6>
                 </div>
             </div>
 
             <div class="card">
-                <h5 class="card-header" id= "card-header4" data-value = "Question 1">Question 4</h5>
+                <h5 class="card-header" id= "card-header4" data-value = "Question 4">Question 4</h5>
                 <div class="card-body">
                     <h5 class="card-title">What is the longest active non-stop flight in the world as of Spring 2018?</h5>
                     <form action="">
-                        <input class = "radio-button" name="q4" type="radio" value="Auckland to Doha"> Auckland to Doha<br>
-                        <input class = "radio-button" name="q4" type="radio" value="Auckland to Dubai"> Auckland to Dubai<br>                        
-                        <input class = "radio-button" name="q4" type="radio" value="Auckland to Doha"> Houston to Sydney<br>
-                        <input class = "radio-button" name="q4" type="radio" value="Perth to London"> Perth to London<br>
-                        <input class = "radio-button" name="q4" type="radio" value="Singapore to Los Angeles"> Singapore to Los Angeles<br>
+                        <input class = "radio-button" name="q4" type="radio" value="Auckland, New Zealand to Doha, Qatar"> Auckland, New Zealand to Doha, Qatar<br>
+                        <input class = "radio-button" name="q4" type="radio" value="Auckland, New Zealand to Dubai, United Arab Emirates"> Auckland, New Zealand to Dubai, United Arab Emirates<br>                        
+                        <input class = "radio-button" name="q4" type="radio" value="Houston, United States to Sydney, Australia"> Houston, United States to Sydney, Australia<br>
+                        <input class = "radio-button" name="q4" type="radio" value="Perth, Australia to London, England"> Perth, Australia to London, England<br>
+                        <input class = "radio-button" name="q4" type="radio" value="Singapore, Singapore to Los Angeles, United States"> Singapore, Singapore to Los Angeles, United States<br>
                     </form>
                     <br>
                     <h6 id = "card-selected-q4"></h6>
                     <h6 id = "card-answer-q4"></h6>
+                    <h6 class = "card-source" id = "card-source-q4"><a href ="https://www.airfarewatchdog.com/blog/44252012/10-longest-nonstop-flights-in-the-world" target="_blank">Source</a></h6>
                 </div>
             </div>
 
-
             <div class="card">
-                <h5 class="card-header" id= "card-header5" data-value = "Question 1">Question 5</h5>
+                <h5 class="card-header" id= "card-header5" data-value = "Question 5">Question 5</h5>
                 <div class="card-body">
                     <h5 class="card-title">Which airport won Skytrax's "Best Airport in the World" award in 2018?</h5>
                     <form action="">
-                        <input class = "radio-button" name="q5" type="radio" value="Doha Hamad  International Airport"> Doha Hamad International Airport<br>
-                        <input class = "radio-button" name="q5" type="radio" value="Hong Kong Chek Lap Kok International Airport"> Hong Kong Chek Lap Kok International Airport<br>
+                        <input class = "radio-button" name="q5" type="radio" value="Doha Hamad International Airport"> Doha Hamad International Airport<br>
+                        <input class = "radio-button" name="q5" type="radio" value="Hong Kong International Airport"> Hong Kong International Airport<br>
                         <input class = "radio-button" name="q5" type="radio" value="London Heathrow International Airport"> London Heathrow International Airport<br>
                         <input class = "radio-button" name="q5" type="radio" value="Seoul Incheon International Airport"> Seoul Incheon International Airport<br>
-                        <input class = "radio-button" name="q5" type="radio" value="Singapore Changi International Airport"> Singapore Changi International Airport<br>
+                        <input class = "radio-button" name="q5" type="radio" value="Singapore Changi Airport"> Singapore Changi Airport<br>
                     </form>
                     <br>
                     <h6 id = "card-selected-q5"></h6>
                     <h6 id = "card-answer-q5"></h6>
+                    <h6 class = "card-source" id = "card-source-q5"><a href ="https://www.cnn.com/travel/article/worlds-best-airports-2018/index.html" target="_blank">Source</a></h6>
                 </div>
             </div>
+
+            <div class="card">
+                <h5 class="card-header" id= "card-header6" data-value = "Question 6">Question 6</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Which airline one Skytrax's "Best Airliner in the World" award in 2018?</h5>
+                    <form action="">
+                        <input class = "radio-button" name="q6" type="radio" value="ANA All Nippon Airways"> ANA All Nippon Airways<br>
+                        <input class = "radio-button" name="q6" type="radio" value="Cathay Pacific Airways"> Cathay Pacific Airways<br>
+                        <input class = "radio-button" name="q6" type="radio" value="Emirates"> Emirates<br>
+                        <input class = "radio-button" name="q6" type="radio" value="Qatar Airways">  Qatar Airways<br>
+                        <input class = "radio-button" name="q6" type="radio" value="Singapore Airlines"> Singapore Airlines<br>
+                    </form>
+                    <br>
+                    <h6 id = "card-selected-q6"></h6>
+                    <h6 id = "card-answer-q6"></h6>
+                    <h6 class = "card-source" id = "card-source-q6"><a href ="https://www.independent.co.uk/travel/news-and-advice/best-airlines-world-singapore-easyjet-lufthansa-skytax-awards-2018-a8452371.html" target="_blank">Source</a></h6>
+                </div>
+            </div>
+
+            <div class="card">
+                <h5 class="card-header" id= "card-header7" data-value = "Question 7">Question 7</h5>
+                <div class="card-body">
+                    <h5 class="card-title">What is the most successful selling jet aircraft in history?</h5>
+                    <form action="">
+                        <input class = "radio-button" name="q7" type="radio" value="Airbus A320"> Airbus A320<br>
+                        <input class = "radio-button" name="q7" type="radio" value="Boeing 737"> Boeing 737<br>
+                        <input class = "radio-button" name="q7" type="radio" value="Boeing 777"> Boeing 777<br>
+                        <input class = "radio-button" name="q7" type="radio" value="Cessna 172"> Cessna 172<br>                        
+                        <input class = "radio-button" name="q7" type="radio" value="McDonnell Douglas MD-80"> McDonnell Douglas MD-80<br>
+                    </form>
+                    <br>
+                    <h6 id = "card-selected-q7"></h6>
+                    <h6 id = "card-answer-q7"></h6>
+                    <h6 class = "card-source" id = "card-source-q7"><a href ="https://www.telegraph.co.uk/travel/comment/the-most-popular-plane-ever-made" target="_blank">Source</a></h6>
+                </div>
+            </div>
+
+            <div class="card">
+                <h5 class="card-header" id= "card-header8" data-value = "Question 8">Question 8</h5>
+                <div class="card-body">
+                    <h5 class="card-title">What is the busiest airport in terms of total cargo handled in 2017?</h5>
+                    <form action="">
+                        <input class = "radio-button" name="q8" type="radio" value="Hong Kong International Airport"> Hong Kong International Airport<br>
+                        <input class = "radio-button" name="q8" type="radio" value="Incheon International Airport"> Incheon International Airport<br>
+                        <input class = "radio-button" name="q8" type="radio" value="Memphis International Airport"> Memphis International Airport<br>
+                        <input class = "radio-button" name="q8" type="radio" value="Shanghai Pudong International Airport"> Shanghai Pudong International Airport<br>
+                        <input class = "radio-button" name="q8" type="radio" value="Ted Stevens Anchorage International Airport"> Ted Stevens Anchorage International Airport<br>
+                    </form>
+                    <br>
+                    <h6 id = "card-selected-q8"></h6>
+                    <h6 id = "card-answer-q8"></h6>
+                    <h6 class = "card-source" id = "card-source-q8"><a href ="http://www.airport-world.com/news/aci-news/6601-aci-figures-reveal-the-world-s-busiest-passenger-and-cargo-airports.html" target="_blank">Source</a></h6>
+                </div>
+            </div>
+
+            <div class="card">
+                <h5 class="card-header" id= "card-header9" data-value = "Question 9">Question 9</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Which US airport has most runways as of 2017?</h5>
+                    <form action="">
+                        <input class = "radio-button" name="q9" type="radio" value="Boston Logan International Airport"> Boston Logan International Airport<br>
+                        <input class = "radio-button" name="q9" type="radio" value="Chicago O'Hare International Airport"> Chicago O'Hare International Airport<br>
+                        <input class = "radio-button" name="q9" type="radio" value="Dallas-Ft. Worth International Airport"> Dallas-Ft. Worth International Airport<br>
+                        <input class = "radio-button" name="q9" type="radio" value="Denver International Airport"> Denver International Airport<br>
+                        <input class = "radio-button" name="q9" type="radio" value="Hartsfield-Jackson Atlanta International Airport"> Hartsfield-Jackson Atlanta International Airport<br>
+                    </form>
+                    <br>
+                    <h6 id = "card-selected-q9"></h6>
+                    <h6 id = "card-answer-q9"></h6>
+                    <h6 class = "card-source" id = "card-source-q9"><a href ="http://www.boldmethod.com/blog/lists/2014/09/9-us-airports-with-the-most-runways" target="_blank">Source</a></h6>
+                </div>
+            </div>
+
+            <div class="card">
+                <h5 class="card-header" id= "card-header10" data-value = "Question 10">Question 10</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Which airport experiences the most delays due to weather in 2017?</h5>
+                    <form action="">
+                        <input class = "radio-button" name="q10" type="radio" value="Chicago O’Hare International Airport"> Hartsfield-Jackson Atlanta International Airport<br>
+                        <input class = "radio-button" name="q10" type="radio" value="John F. Kennedy International Airport"> John F. Kennedy International Airport<br>
+                        <input class = "radio-button" name="q10" type="radio" value="Newark Liberty International Airport "> Newark Liberty International Airport <br>
+                        <input class = "radio-button" name="q10" type="radio" value="New York LaGuardia Airport"> New York LaGuardia Airport<br>
+                        <input class = "radio-button" name="q10" type="radio" value="San Francisco International Airport"> San Francisco International Airport<br>
+
+                    </form>
+                    <br>
+                    <h6 id = "card-selected-q10"></h6>
+                    <h6 id = "card-answer-q10"></h6>
+                    <h6 class = "card-source" id = "card-source-q10"><a href ="https://www.rd.com/culture/most-weather-delayed-airports" target="_blank">Source</a></h6>
+                </div>
+            </div>
+
+        <div class = "submit-container">
+            <div class = "submit button">
+            <button class="btn btn-primary btn-lg" type="button" id = "submit">Submit</button>
+            <button class="btn btn-danger btn-lg" type="button" id = "reset">Reset</button>
+            </div>
+        </div>
 
             
         </div>
     </div>
 
-    <div class = "submit-container">
-        <div class = "submit button">
-        <button class="btn btn-primary btn-lg" type="button" id = "submit">Submit</button>
-        <button class="btn btn-danger btn-lg" type="button" id = "reset">Reset</button>
-        </div>
-    </div>
 
-    </div>
+</div>
 
- 
 
 <!-- Bootstrap jquery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
 
 </body>
 </html>
