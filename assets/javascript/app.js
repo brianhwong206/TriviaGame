@@ -69,7 +69,7 @@ function storeUserSelection(){
             $("#card-answer-q" + i).html(answerArray[(i-1)] + " is the correct answer.");
         }
         else {
-            $("#card-selected-q" + i).html("No radio button selected");
+            $("#card-selected-q" + i).html("No attempt made." + " " + '<i class="far fa-meh-blank"></i>');
         }
     }
 }
@@ -81,23 +81,25 @@ function checkAnswer(){ // a new array is created to tally up the score, add vis
             scoreArray.push(1); // score one if correct
             questionTitle = $("#card-header"+(j+1)).attr("data-value");
             $("#card-header"+(j+1)).html(questionTitle + " " + '<i class="far fa-grin-wink"></i>'); // adds green smile if user selected correct answer
+            $("#card-source-q" + (j+1)).css("display", "block"); // display source of trivia
         }
         else if (selectedArray[j] == null){
             scoreArray.push(0); // score zero if incorrect
             questionTitle = $("#card-header"+(j+1)).attr("data-value");
-            $("#card-header"+(j+1)).html(questionTitle + " " + '<i class="far fa-question-circle"></i>'); // adds yellow meh mark if user selects
+            $("#card-header"+(j+1)).html(questionTitle + " " + '<i class="far fa-question-circle"></i>'); // adds question mark if user made no attempt
         }
         else{ 
             scoreArray.push(0); // score zero if incorrect
             questionTitle = $("#card-header"+(j+1)).attr("data-value");
             $("#card-header"+(j+1)).html(questionTitle + " " + '<i class="far fa-frown-open"></i>'); // adds red frown mark if user selects incorrect answer
+            $("#card-source-q" + (j+1)).css("display", "block"); // display source of trivia
         }
     }
     totalScore = scoreArray.reduce(function(a,b){ // total score reduces the scoreArray to a sum total
         return a + b ;
     },0);
     accuracy = (((totalScore)/totalGuesses)*100).toFixed(2);
-    $(".card-source").css("display", "block");
+    
     console.log("User score array: " + scoreArray); // prints the score Array
     console.log("Total Score: " + totalScore); // prints the total score variable
     console.log("Total Guesses: " + totalGuesses); // prints the total guesses variable
