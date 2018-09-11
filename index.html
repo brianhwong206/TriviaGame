@@ -43,7 +43,7 @@
     
         <div class="collapse" id="collapseInstructions">
             <div class="card card-body">
-                You will have 60 seconds to answer the 10 presented questions. The moment you click on the "Start" button, the countdown will begin and all questions will be presented. <br>
+                You will have 60 seconds to answer the 10 presented questions. When you click on the "Start" button below, the countdown will begin and all questions will be presented. <br>
                 At the end of 60 seconds, the correct answers and your score will be presented to you.<br>
                 If you finish answering all questions before 60 seconds has elapsed, you may also click the "Submit" button at the bottom.<br>
                 Good Luck.
@@ -60,10 +60,11 @@
     </div>
 
     <div class = "timer-container">
-        <div id = "timer"><h2></h2></div>
+        <div id = "timer"><h2>60 seconds left</h2></div>
         <button class="btn btn-primary btn-lg" id="start" type ="button">Start</button>
     </div>
 
+    <!--Self-note: Not DRY! The following section can be potentially simplified with arrays {Q1: [Index, Question, Answer, option1,2,3,4,5, source]  then cycled through a for loop to create class and attribute assignments. Can also potentially randomize the questions so it is not fixed each time.-->
     <div class = "questions-container">
         <div class = "questions">
 
@@ -232,7 +233,7 @@
             <div class="card">
                 <h5 class="card-header" id= "card-header10" data-value = "Question 10">Question 10</h5>
                 <div class="card-body">
-                    <h5 class="card-title">Which airport experiences the most delays due to weather in 2017?</h5>
+                    <h5 class="card-title">Which US airport experienced the most weather related delays and departures in 2017?</h5>
                     <form action="">
                         <input class = "radio-button" name="q10" type="radio" value="Chicago O’Hare International Airport"> Hartsfield-Jackson Atlanta International Airport<br>
                         <input class = "radio-button" name="q10" type="radio" value="John F. Kennedy International Airport"> John F. Kennedy International Airport<br>
@@ -258,7 +259,6 @@
             
         </div>
     </div>
-
 
 </div>
 

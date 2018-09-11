@@ -50,11 +50,13 @@ function increment() {
 function pause() {
     clearInterval(intervalId); 
 }
+
 function start(){
     run();
     $(".questions-container").css("display", "block"); // when start button is clicked, questions container is displayed
     $(".submit-container").css("display", "block"); // when start button is clicked, submit container is displayed
     $("#start").css("visibility", "hidden"); // start button will hide when the trivia quiz starts
+    window.scrollTo(0, 0); // jump to top of page
 }
 
 function storeUserSelection(){
@@ -64,11 +66,11 @@ function storeUserSelection(){
         if (tempAnswer.length > 0){ // checks to see if a radio button was selected
             totalGuesses++;
             //$("#card-selected-q" + i).html(selectedArray[(i-1)] + " is the option you have selected.");
+            $("#card-answer-q" + i).html(answerArray[(i-1)] + " is the correct answer.");
         }
-        // else {
-        //     $("#card-selected-q" + i).html("No radio button selected");
-        // }
-        //$("#card-answer-q" + i).html(answerArray[(i-1)] + " is the correct answer.");
+        else {
+            $("#card-selected-q" + i).html("No radio button selected");
+        }
     }
 }
 
@@ -136,12 +138,12 @@ function reset(){
     $('.radio-button').prop('checked', false); // unchecks all radio buttons if reset
 
     for (var k=1; k < (answerArray.length + 1); k++){ // for loop that clears out all selected items, answers, check/times icons presented
-        $("#card-selected-q" + k).html("");
-        $("#card-answer-q" + k).html("");
+        $("#card-selected-q" + k).html(""); // populates the target with blank
+        $("#card-answer-q" + k).html(""); //populates the target with blank
         questionTitle = $("#card-header"+(k)).attr("data-value");
-        $("#card-header"+(k)).html(questionTitle);
+        $("#card-header"+(k)).html(questionTitle); // returns question title to original state
     }
-    $(".card-source").css("display", "none");
+    $(".card-source").css("display", "none"); // hides the source
 }
 
 })
