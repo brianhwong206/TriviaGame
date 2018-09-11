@@ -38,10 +38,10 @@ function increment() {
         checkAnswer();
         window.scrollTo(0, 0); // jump to top of page
         if (totalGuesses>0){
-            $("#timer").html("<h2>" + "Your score is " + accuracy + "%. </h2> <br>"  + " <h5> You got " + totalScore  + " correct out of " + totalGuesses + " question(s) attempted. </h5>");
+            displayResult();
         }
         else {
-            $("#timer").html("<h2>" + "You did not attempt the trivia."  + " " + '<i class="fas fa-sad-tear"></i>' + "</h2>");
+            displayResultNoAttempt();
         }
         //$("#timer").html("<h2>" + " Time's Up. " + "Your score is " + accuracy + "%" + " </h2>"); // display's Time's Up on html
     }
@@ -119,10 +119,9 @@ function submit(){
     checkAnswer();
     window.scrollTo(0, 0); // jump to top of page
     if (totalGuesses>0){
-        $("#timer").html("<h2>" + "Your score is " + accuracy + "%. </h2> <br>"  + " <h5> You got " + totalScore  + " correct out of " + totalGuesses + " question(s) attempted. </h5>");
-    }
+        displayResult();}
     else {
-        $("#timer").html("<h2>" + "You did not attempt the trivia." + " " + '<i class="fas fa-sad-tear"></i>' + "</h2>");
+        displayResultNoAttempt()
     }
 }
 
@@ -146,6 +145,14 @@ function reset(){
         $("#card-header"+(k)).html(questionTitle); // returns question title to original state
     }
     $(".card-source").css("display", "none"); // hides the source
+}
+
+function displayResult(){
+    $("#timer").html("<h2>" + "Your score is " + accuracy + "%. </h2> <br>" + " <h5> You got " + totalScore  + " question(s) correct out of " + totalGuesses + " question(s) attempted. </h5>");
+}
+
+function displayResultNoAttempt(){
+    $("#timer").html("<h2>" + "You did not attempt the trivia." + " " + '<i class="fas fa-sad-tear"></i>' + "</h2>");
 }
 
 })

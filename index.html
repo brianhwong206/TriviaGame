@@ -37,6 +37,8 @@
     <div class = "instructions-container">
     <p>
         <button class="btn btn-default btn-lg" type="button" data-toggle="collapse" data-target="#collapseInstructions" aria-expanded="false" aria-controls="collapseInstructions">Instructions</button>
+
+        <button class="btn btn-primary btn-lg" id="start" type ="button">Start</button>
         
         <button class="btn btn-lg" id = "cheat-mode" type="button" data-toggle="collapse" data-target="#collaspeCheatMode" aria-expanded="false" aria-controls="collaspeCheatMode">Cheat Mode</button>
     </p>
@@ -61,7 +63,6 @@
 
     <div class = "timer-container">
         <div id = "timer"><h2>60 seconds left</h2></div>
-        <button class="btn btn-primary btn-lg" id="start" type ="button">Start</button>
     </div>
 
     <!--Self-note: Not DRY! The following section can be potentially simplified with arrays {Q1: [Index, Question, Answer, option1,2,3,4,5, source]  then cycled through a for loop to create class and attribute assignments. Can also potentially randomize the questions so it is not fixed each time.-->
@@ -161,7 +162,7 @@
             <div class="card">
                 <h5 class="card-header" id= "card-header6" data-value = "Question 6">Question 6</h5>
                 <div class="card-body">
-                    <h5 class="card-title">Which airline one Skytrax's "Best Airliner in the World" award in 2018?</h5>
+                    <h5 class="card-title">Which airline won Skytrax's "Best Airliner in the World" award in 2018?</h5>
                     <form action="">
                         <input class = "radio-button" name="q6" type="radio" value="ANA All Nippon Airways"> ANA All Nippon Airways<br>
                         <input class = "radio-button" name="q6" type="radio" value="Cathay Pacific Airways"> Cathay Pacific Airways<br>
