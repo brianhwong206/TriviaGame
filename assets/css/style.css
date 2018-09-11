@@ -52,9 +52,24 @@ body{
     margin: auto;
 }
 
+#collaspeCheatMode{
+    border: lightgray .5px solid;
+}
+
 .btn{
     margin-left: 2px;
     margin-right: 2px;
+}
+
+
+.fa-check{
+    display: none;
+    color: green;
+}
+
+.fa-times{
+    display: none;
+    color: red;
 }
 
 /* scroll bar */

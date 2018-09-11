@@ -10,6 +10,8 @@ var selectedArray = []; // array to hold the user selected radio buttons
 var answerArray = ["Hartsfield-Jackson Atlanta International Airport", "Airbus A380-800", "Daocheng Yading Airport", "Auckland to Doha", "Singapore Changi International Airport"]; // answer array 
 var scoreArray = []; // array to hold ones or zeros if the users got the correct answer
 var accuracy;
+var totalScore;
+var questionTitle;
 
 // click actions
 $("#start").on("click", start); // button to start the timer
@@ -18,7 +20,6 @@ $("#resume").on("click", run); // button to resume the timer
 $("#reset-timer").on("click", resetTimer); // button to resume the timer
 $("#submit").on("click", submit); // button to resume the timer
 $("#reset").on("click", reset); // button to reset all radio buttons and timer 
-
 
 //functions 
 function run() { // function that executes the timer
@@ -35,7 +36,7 @@ function increment() {
         pause();
         storeUserSelection();
         checkAnswer();
-        $("#timer").html("<h2>" + " Time's Up. " + "Your accuracy is " + accuracy + "%" + " </h2>"); // display's Time's Up on html
+        $("#timer").html("<h2>" + " Time's Up. " + "Your score is " + accuracy + "%" + " </h2>"); // display's Time's Up on html
         // console.log("User Selection: " + selectedArray); // prints user answers in an array.
     }
 }
@@ -45,8 +46,8 @@ function pause() {
 }
 function start(){
     run();
-    $(".questions-container").css("display", "block"); //"visibility", "visible"
-    $(".submit-container").css("display", "block"); //"visibility", "visible"
+    $(".questions-container").css("display", "block"); // when start button is clicked, questions container is displayed
+    $(".submit-container").css("display", "block"); // when start button is clicked, submit container is displayed
 }
 
 function storeUserSelection(){
@@ -55,6 +56,8 @@ function storeUserSelection(){
         selectedArray.push(tempAnswer.val()); // adds tempAnswer.val to user selected array
         if (tempAnswer.length > 0){ // checks to see if a radio button was selected
             totalGuesses++;
+            //$("#card-selected-q" + i).html(selectedArray[(i-1)] + " is the option you have selected.");
+
         }
         else {
             $("#card-selected-q" + i).html("No radio button selected");
@@ -68,15 +71,19 @@ function checkAnswer(){ // a new array is created to tally up the score
     for (var j = 0; j < answerArray.length; j++) {
         if (selectedArray[j] == answerArray[j]){ // comparing two arrays index 0 to index 0, index 1 to index 1
             scoreArray.push(1); // score one if correct
+            questionTitle = $("#card-header"+(j+1)).attr("data-value");
+            $("#card-header"+(j+1)).html(questionTitle + " " + '<i class="fa fa-check" aria-hidden="true"></i>');
         }
         else{
             scoreArray.push(0); // score zero if incorrect
+            questionTitle = $("#card-header"+(j+1)).attr("data-value");
+            $("#card-header"+(j+1)).html(questionTitle + " " + '<i class="fa fa-times" aria-hidden="true"></i>');
         }
     }
     totalScore = scoreArray.reduce(function(a,b){ // total score reduces the scoreArray to a sum total
         return a + b ;
     },0);
-    accuracy = (totalScore*100)/totalGuesses
+    accuracy = ((totalScore)/totalGuesses)*100;
     console.log("User score array: " + scoreArray); // prints the score Array
     console.log("Total Score: " + totalScore); // prints the total score variable
     console.log("Total Guesses: " + totalGuesses); // prints the total guesses variable
@@ -94,15 +101,19 @@ function submit(){
     pause();
     storeUserSelection();
     checkAnswer();
-    $("#timer").html("<h2>" + "Your accuracy is " + accuracy + "%"  + "</h2>");
+    $("#timer").html("<h2>" + "Your score is " + accuracy + "%"  + "</h2>");
 }
 
 function reset(){
-    pause();
+    pause(); // pauses the timer
+    scoreArray = []; // empties out the score array
+    selectedArray = []; // empties out the user selected items array
+    totalScore = 0; // resets total score to 0
+    totalGuesses = 0; // resets user total guess to 0
     counter = 0; // resets counter back to 0
     $("#timer").html("<h2>" + timeLeft + " seconds left" + "</h2>");
-    $(".questions-container").css("display", "none"); //"visibility", "visible"
-    $(".submit-container").css("display", "none"); //"visibility", "visible"
+    $(".questions-container").css("display", "none");
+    $(".submit-container").css("display", "none");
     $('.radio-button').prop('checked', false);
 
     for (var k=1; k < 6; k++){ // for loop that clears out all selected and answers presented
